@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    fetch("/api/get-message?name=Static Web Apps")
+    .then(res => res.text())
+    .then(data => setMessage(data));
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +24,7 @@ function App() {
         >
           Learn React
         </a>
+        {message && <p>{message}</p>}
       </header>
     </div>
   );
