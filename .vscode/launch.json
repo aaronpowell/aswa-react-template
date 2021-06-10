@@ -2,6 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "command": "swa start http://localhost:3000 --api http://localhost:7071",
+      "name": "Run emulator",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "command": "npm start",
       "name": "Run frontend",
       "request": "launch",
@@ -17,8 +23,8 @@
   ],
   "compounds": [
     {
-      "name": "Run full stack",
-      "configurations": ["Run frontend", "Run backend"]
+      "name": "Launch it all 🚀",
+      "configurations": ["Run emulator", "Run frontend", "Run backend"]
     }
   ]
 }
